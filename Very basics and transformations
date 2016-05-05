@@ -1,0 +1,25 @@
+//Graphlab and Sframe basics
+
+// The very basics
+import graphlab
+sf
+sf.tail()
+sf.show()
+graphlab.canvas.set_target('ipynb')
+sf['age'].show(view='Categorical')
+sf['Country']
+sf['age']
+sf['age'].mean()
+sf['age'].max()
+sf['Full Name'] = sf['First Name'] + ' ' + sf['Last Name']
+sf['age'] * sf['age']
+
+// Some basic transformations
+def transform_country(country):
+    if country == 'USA':
+        return 'United States'
+    else:
+        return country
+
+sf['Country'].apply(transform_country)
+sf['Country'] = sf['Country'].apply(transform_country)
